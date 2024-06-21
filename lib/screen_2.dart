@@ -25,16 +25,23 @@ class _Screen2State extends State<Screen2> {
               height: 12,
             ),
             Text('Last element is: ${widget.numberList.last.toString()}'),
-            Expanded(
+            SizedBox(
+              width: double.maxFinite,
+              height: 600,
               child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
                   itemCount: widget.numberList.length,
                   itemBuilder: (context, index) {
-                    return ListTile(
-                        title: Text(widget.numberList[index].toString()));
+                    return Padding(
+                      padding: const EdgeInsets.all(18.0),
+                      child: Text(widget.numberList[index].toString()),
+                    );
                   }),
             ),
             ElevatedButton(
-                onPressed: () {}, child: const Text('Go to Next Screen')),
+                onPressed: () {
+                  Navigator.pop(context);
+                }, child: const Text('Go to Previous Screen')),
             const SizedBox(
               height: 16,
             )

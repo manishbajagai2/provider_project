@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:provider_project/Screen2.dart';
+import 'package:provider_project/screen_2.dart';
 
 class Screen1 extends StatefulWidget {
   const Screen1({super.key});
