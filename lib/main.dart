@@ -1,4 +1,6 @@
 import "package:flutter/material.dart";
+import "package:provider/provider.dart";
+import "package:provider_project/number_state.dart";
 import "package:provider_project/screen_1.dart";
 
 void main() {
@@ -10,11 +12,15 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const SafeArea(
-      child: MaterialApp(
-        debugShowCheckedModeBanner: false,
-        home: Screen1(),
-      ),
-    );
+    return MultiProvider(
+        providers: [
+          ChangeNotifierProvider(create: (context) => NumberState()),
+        ],
+        child: const SafeArea(
+          child: MaterialApp(
+            debugShowCheckedModeBanner: false,
+            home: Screen1(),
+          ),
+        ));
   }
 }
